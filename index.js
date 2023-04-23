@@ -69,7 +69,7 @@ app.get("/getWeather", async (req, res) => {
   //   console.log(r.data);
 
   let responseData = formatDataAPI1(r.data);
-  console.log(responseData);
+//   console.log(responseData);
 
   //weekly forcast [500 call/day]
   const API_KEY2 = "X0GflSBW0mNwW1S6p9FvM3RFxcjh2VYz";
@@ -78,7 +78,7 @@ app.get("/getWeather", async (req, res) => {
   );
 
   responseData = formatDataAPI2(responseData, r2.data.timelines.daily);
-  console.log(responseData);
+//   console.log(responseData);
   res.send(responseData);
 });
 
