@@ -62,8 +62,9 @@ app.get("/getWeather", async (req, res) => {
   const city = req.query.city;
 
   //singleDay API call [60 calls/minute]
+  const API_KEY1 = "c82cafac4a2438ea92620e5ae5422ed1";
   const r = await axios.get(
-    `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=c82cafac4a2438ea92620e5ae5422ed1`
+    `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${API_KEY1}`
   );
   //   console.log(r.data);
 
@@ -71,8 +72,9 @@ app.get("/getWeather", async (req, res) => {
   console.log(responseData);
 
   //weekly forcast [500 call/day]
+  const API_KEY2 = "X0GflSBW0mNwW1S6p9FvM3RFxcjh2VYz";
   const r2 = await axios.get(
-    `https://api.tomorrow.io/v4/weather/forecast?location=${city}&timesteps=1d&units=metric&apikey=X0GflSBW0mNwW1S6p9FvM3RFxcjh2VYz`
+    `https://api.tomorrow.io/v4/weather/forecast?location=${city}&timesteps=1d&units=metric&apikey=${API_KEY2}`
   );
 
   responseData = formatDataAPI2(responseData, r2.data.timelines.daily);
