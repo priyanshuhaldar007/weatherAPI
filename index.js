@@ -58,7 +58,7 @@ function formatDataAPI2(responseData, arr) {
   return responseData;
 }
 
-app.get("/", async (req, res) => {
+app.get("/getWeather", async (req, res) => {
   const city = req.query.city;
 
   //singleDay API call [60 calls/minute]
